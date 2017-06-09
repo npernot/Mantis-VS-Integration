@@ -73,7 +73,7 @@ namespace VSMantisConnect.Views
 			OnUpdateStatus(LocalizationHelper.GetString("SettingsViewLoading"), 0, true);
 			try
 			{
-				this.Dispatcher.InvokeAsync(() =>
+				await this.Dispatcher.InvokeAsync(() =>
 				{
 					cbxLanguage.DataContext = new CultureInfo[] { new CultureInfo("fr"), new CultureInfo("en") };
 					cbxLanguage.SelectedItem = Properties.Settings.Default.Language;
